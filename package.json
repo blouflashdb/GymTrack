@@ -2,7 +2,7 @@
   "name": "nuxt-app",
   "type": "module",
   "private": true,
-  "packageManager": "pnpm@10.23.0",
+  "packageManager": "npm@11.7.0",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -14,19 +14,18 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@nuxt/eslint": "catalog:",
-    "@nuxt/image": "catalog:",
-    "@nuxt/ui": "catalog:",
-    "nuxt": "catalog:",
-    "tailwindcss": "catalog:",
-    "vue": "catalog:",
-    "vue-router": "catalog:"
+    "@nuxt/eslint": "^1.12.1",
+    "@nuxt/image": "^2.0.0",
+    "@nuxt/ui": "^4.3.0",
+    "nuxt": "^4.2.2",
+    "vue": "^3.5.26",
+    "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "catalog:",
-    "eslint": "catalog:",
-    "eslint-plugin-format": "catalog:",
-    "typescript": "catalog:",
-    "vue-tsc": "catalog:"
+    "@antfu/eslint-config": "^6.7.3",
+    "eslint": "^9.39.2",
+    "eslint-plugin-format": "^1.2.0",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.2.2"
   }
 }

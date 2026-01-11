@@ -1,8 +1,7 @@
 {
   "recommendations": [
-    "antfu.pnpm-catalog-lens",
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
+    "prettier.prettier-vscode",
     "bradlc.vscode-tailwindcss",
     "vue.volar",
     "antfu.iconify"
