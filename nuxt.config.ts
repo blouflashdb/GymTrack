@@ -14,7 +14,7 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2025-07-15',
   typescript: {
-    typeCheck: true,
+    typeCheck: 'build',
   },
   eslint: {
     config: {
