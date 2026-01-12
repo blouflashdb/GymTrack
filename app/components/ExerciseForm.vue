@@ -1,0 +1,86 @@
+<script setup lang="ts">
+import type { Exercise } from '~/types'
+
+defineEmits<{
+  remove: []
+}>()
+
+const exercise = defineModel<Exercise>({ required: true })
+
+const isConfirmingRemove = ref(false)
+
+function addSet() {
+  const id = crypto.randomUUID()
+  exercise.value.sets[id] = {
+    reps: 0,
+    weight: 0,
+  }
+}
+
+function removeSet(id: string) {
+  delete exercise.value.sets[id]
+}
+</script>
+
+<template>
+  <UCard>
+    <template #header>
+      <div class="flex items-end gap-2">
+        <UFormField label="Exercise Name" class="flex-1">
+          <UInput
+            v-model="exercise.name"
+            placeholder="Bench Press"
+            class="w-full"
+          />
+        </UFormField>
+
+        <div v-if="isConfirmingRemove" class="flex items-center gap-1 bg-red-50 dark:bg-red-900/20 rounded-lg p-1">
+          <UButton
+            icon="i-heroicons-x-mark"
+            variant="ghost"
+            color="neutral"
+            size="xs"
+            @click="isConfirmingRemove = false"
+          />
+          <UButton
+            icon="i-heroicons-trash"
+            variant="solid"
+            color="error"
+            size="xs"
+            label="Remove?"
+            @click="$emit('remove')"
+          />
+        </div>
+        <UButton
+          v-else
+          icon="i-heroicons-trash"
+          color="error"
+          variant="ghost"
+          @click="isConfirmingRemove = true"
+        />
+      </div>
+    </template>
+
+    <div class="space-y-2">
+      <SetInput
+        v-for="(_set, setId, index) in exercise.sets"
+        :key="setId"
+        v-model:set="exercise.sets[setId]!"
+        :index="index"
+        @remove="removeSet(setId)"
+      />
+      <div v-if="Object.keys(exercise.sets).length === 0" class="text-sm text-gray-500 text-center py-2">
+        No sets added yet.
+      </div>
+      <UButton
+        label="Add Set"
+        icon="i-heroicons-plus"
+        variant="soft"
+        size="sm"
+        block
+        class="mt-2"
+        @click="addSet"
+      />
+    </div>
+  </UCard>
+</template>
