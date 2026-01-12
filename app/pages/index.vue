@@ -2,6 +2,11 @@
 const { trainings, trainingCount } = useTrainings()
 
 const isMounted = useMounted()
+
+const sortedTrainings = computed(() => {
+  return Object.entries(trainings.value)
+    .sort(([, a], [, b]) => b.date.localeCompare(a.date))
+})
 </script>
 
 <template>
@@ -26,7 +31,7 @@ const isMounted = useMounted()
 
       <div v-else class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <TrainingCard
-          v-for="(training, id) in trainings"
+          v-for="[id, training] in sortedTrainings"
           :id="id"
           :key="id"
           :training="training"
