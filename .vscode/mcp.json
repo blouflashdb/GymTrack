@@ -1,7 +1,7 @@
 {
   "servers": {
     "Nuxt UI": {
-      "url": "https://ui4.nuxt.com/mcp",
+      "url": "https://ui.nuxt.com/mcp",
       "type": "http"
     }
   },
