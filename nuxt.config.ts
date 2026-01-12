@@ -19,6 +19,11 @@ export default defineNuxtConfig({
     extractAsyncDataHandlers: true,
   },
   compatibilityDate: '2025-07-15',
+  nitro: {
+    prerender: {
+      routes: ['/'],
+    },
+  },
   typescript: {
     typeCheck: 'build',
   },
