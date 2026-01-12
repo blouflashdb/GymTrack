@@ -72,6 +72,7 @@ const trainingDate = computed(() => {
             variant="ghost"
             color="neutral"
             size="xs"
+            aria-label="Cancel remove"
             @click="isConfirming = false"
           />
           <UButton
@@ -79,6 +80,7 @@ const trainingDate = computed(() => {
             variant="solid"
             color="error"
             size="xs"
+            aria-label="Confirm remove"
             label="Delete?"
             @click="deleteTraining(id)"
           />
@@ -88,6 +90,7 @@ const trainingDate = computed(() => {
           icon="i-heroicons-trash"
           variant="ghost"
           color="error"
+          aria-label="Remove"
           @click="isConfirming = true"
         />
       </div>

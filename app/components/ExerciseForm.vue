@@ -40,6 +40,7 @@ function removeSet(id: string) {
             variant="ghost"
             color="neutral"
             size="xs"
+            aria-label="Cancel remove"
             @click="isConfirmingRemove = false"
           />
           <UButton
@@ -47,6 +48,7 @@ function removeSet(id: string) {
             variant="solid"
             color="error"
             size="xs"
+            aria-label="Confirm remove"
             label="Remove?"
             @click="$emit('remove')"
           />
@@ -56,6 +58,7 @@ function removeSet(id: string) {
           icon="i-heroicons-trash"
           color="error"
           variant="ghost"
+          aria-label="Remove"
           @click="isConfirmingRemove = true"
         />
       </div>

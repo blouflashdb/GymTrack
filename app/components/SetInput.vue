@@ -45,6 +45,7 @@ const set = defineModel<Set>('set', { required: true })
       icon="i-heroicons-trash"
       color="error"
       variant="ghost"
+      aria-label="Remove set"
       @click="emit('remove')"
     />
   </div>

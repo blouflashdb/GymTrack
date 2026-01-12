@@ -10,9 +10,8 @@ const { trainings, trainingCount } = useTrainings()
         icon="i-heroicons-plus"
         size="lg"
         color="primary"
-      >
-        Start New Training
-      </UButton>
+        label="Start New Training"
+      />
     </div>
 
     <UEmpty
