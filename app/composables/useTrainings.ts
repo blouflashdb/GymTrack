@@ -5,6 +5,22 @@ export function useTrainings() {
     initOnMounted: true,
   })
 
+  const allExerciseNames = computed(() => {
+    const names = new Set<string>()
+    if (!trainings.value)
+      return []
+
+    Object.values(trainings.value).forEach((training) => {
+      if (training.exercises) {
+        Object.values(training.exercises).forEach((exercise) => {
+          if (exercise.name)
+            names.add(exercise.name)
+        })
+      }
+    })
+    return Array.from(names).sort()
+  })
+
   const trainingCount = computed(() => Object.keys(trainings.value).length)
 
   function addTraining(training: Training) {
@@ -26,6 +42,7 @@ export function useTrainings() {
   return {
     trainings,
     trainingCount,
+    allExerciseNames,
     addTraining,
     updateTraining,
     deleteTraining,

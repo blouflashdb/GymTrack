@@ -5,6 +5,11 @@ const items = [
     icon: 'i-heroicons-home',
     to: '/',
   },
+  {
+    label: 'Chart',
+    icon: 'i-heroicons-chart-bar',
+    to: '/chart',
+  },
 ]
 </script>
 

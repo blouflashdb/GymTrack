@@ -9,11 +9,24 @@ const exercise = defineModel<Exercise>({ required: true })
 
 const isConfirmingRemove = ref(false)
 
+const { allExerciseNames } = useTrainings()
+const items = ref<string[]>([])
+
+onMounted(() => {
+  items.value = allExerciseNames.value
+})
+
+function onCreate(item: string) {
+  items.value.push(item)
+
+  exercise.value.name = item
+}
+
 function addSet() {
   const id = crypto.randomUUID()
   exercise.value.sets[id] = {
     reps: 0,
-    weight: 0,
+    weight: Object.values(exercise.value.sets).at(0)?.weight ?? 0,
   }
 }
 
@@ -27,11 +40,7 @@ function removeSet(id: string) {
     <template #header>
       <div class="flex items-end gap-2">
         <UFormField label="Exercise Name" class="flex-1">
-          <UInput
-            v-model="exercise.name"
-            placeholder="Bench Press"
-            class="w-full"
-          />
+          <USelectMenu v-model="exercise.name" create-item :items="items" class="w-full" placeholder="Select or create exercise" @create="onCreate" />
         </UFormField>
 
         <div v-if="isConfirmingRemove" class="flex items-center gap-1 bg-red-50 dark:bg-red-900/20 rounded-lg p-1">
@@ -72,9 +81,7 @@ function removeSet(id: string) {
         :index="index"
         @remove="removeSet(setId)"
       />
-      <div v-if="Object.keys(exercise.sets).length === 0" class="text-sm text-gray-500 text-center py-2">
-        No sets added yet.
-      </div>
+      <UEmpty v-if="Object.keys(exercise.sets).length === 0" title="No sets added yet." />
       <UButton
         label="Add Set"
         icon="i-heroicons-plus"

@@ -20,11 +20,14 @@ async function save() {
 </script>
 
 <template>
-  <TrainingForm
-    v-if="training"
-    v-model="training"
-    title="Edit Training"
-    submit-label="Save Changes"
-    @submit="save"
-  />
+  <div>
+    <TrainingForm
+      v-if="training"
+      v-model="training"
+      title="Edit Training"
+      submit-label="Save Changes"
+      @submit="save"
+    />
+    <AppLoading v-else />
+  </div>
 </template>
