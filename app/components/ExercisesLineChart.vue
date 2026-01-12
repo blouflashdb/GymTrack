@@ -98,7 +98,7 @@ function xFormatter(tick: number) {
     <AppLoading v-if="!isMounted" />
     <div v-else class="space-y-4">
       <UFormField label="Exercises">
-        <USelectMenu v-model="selectedExercises" multiple :items="allExerciseNames" class="w-100" placeholder="Select exercises" />
+        <USelectMenu v-model="selectedExercises" multiple :items="allExerciseNames" class="w-full" placeholder="Select exercises" />
       </UFormField>
       <LineChart
         v-if="chartData.length > 0 && selectedExercises.length > 0"
