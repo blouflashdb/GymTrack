@@ -34,9 +34,9 @@ function removeExercise(id: string) {
         variant="ghost"
         color="neutral"
       />
-      <h1 class="text-2xl font-bold">
+      <h2 class="text-2xl font-bold">
         {{ title }}
-      </h1>
+      </h2>
     </div>
 
     <UForm :state="training" @submit="emit('submit')">
@@ -65,11 +65,11 @@ function removeExercise(id: string) {
             />
           </div>
 
-          <div v-if="Object.keys(training.exercises).length === 0" class="text-center py-8 bg-gray-50 dark:bg-gray-800 rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-700">
-            <p class="text-gray-500">
-              No exercises added yet.
-            </p>
-          </div>
+          <UEmpty
+            v-if="Object.keys(training.exercises).length === 0"
+            title="No exercises found"
+            description="It looks like you haven't added any exercises. Add one to get started."
+          />
 
           <div v-else class="space-y-4">
             <ExerciseForm

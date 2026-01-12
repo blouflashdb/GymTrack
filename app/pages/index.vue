@@ -3,11 +3,8 @@ const { trainings, trainingCount } = useTrainings()
 </script>
 
 <template>
-  <div>
-    <div class="flex justify-between items-center mb-6">
-      <h1 class="text-3xl font-bold text-gray-900 dark:text-white">
-        GymTrack
-      </h1>
+  <div class="space-y-4">
+    <div class="flex items-center justify-end">
       <UButton
         to="/trainings/new"
         icon="i-heroicons-plus"
@@ -18,26 +15,11 @@ const { trainings, trainingCount } = useTrainings()
       </UButton>
     </div>
 
-    <div v-if="!trainingCount" class="text-center py-12">
-      <UIcon
-        name="i-heroicons-clipboard-document-list"
-        class="text-6xl text-gray-300 dark:text-gray-600 mb-4"
-      />
-      <h3 class="text-xl font-medium text-gray-900 dark:text-white">
-        No trainings yet
-      </h3>
-      <p class="text-gray-500 dark:text-gray-400 mt-2 mb-6">
-        Start tracking your progress by adding a new training session.
-      </p>
-      <UButton
-        to="/trainings/new"
-        icon="i-heroicons-plus"
-        size="lg"
-        variant="soft"
-      >
-        Start Your First Training
-      </UButton>
-    </div>
+    <UEmpty
+      v-if="!trainingCount"
+      title="No trainings found"
+      description="It looks like you haven't added any trainings. Create one to get started."
+    />
 
     <div v-else class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
       <TrainingCard
