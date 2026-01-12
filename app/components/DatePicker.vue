@@ -23,7 +23,7 @@ const date = computed({
           color="neutral"
           variant="link"
           size="sm"
-          icon="i-lucide-calendar"
+          icon="i-heroicons-calendar"
           aria-label="Select a date"
           class="px-0"
         />
