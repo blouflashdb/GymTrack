@@ -14,9 +14,12 @@ const training = defineModel<Training>({ required: true })
 
 function addExercise() {
   const id = crypto.randomUUID()
-  training.value.exercises[id] = {
-    name: '',
-    sets: {},
+  training.value.exercises = {
+    [id]: {
+      name: '',
+      sets: {},
+    },
+    ...training.value.exercises,
   }
 }
 
