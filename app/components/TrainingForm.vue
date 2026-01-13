@@ -29,31 +29,30 @@ function removeExercise(id: string) {
 </script>
 
 <template>
-  <div class="max-w-2xl mx-auto space-y-6">
-    <div class="flex items-center justify-between">
-      <div class="flex items-center gap-4">
-        <UButton
-          to="/"
-          icon="i-heroicons-arrow-left"
-          variant="ghost"
-          color="neutral"
-          aria-label="Back to trainings"
-        />
-        <h2 class="text-2xl font-bold">
-          {{ title }}
-        </h2>
-      </div>
-      <UButton
-        :label="submitLabel"
-        icon="i-heroicons-check-circle"
-        color="primary"
-        size="lg"
-        type="submit"
-      />
-    </div>
-
+  <div class="max-w-2xl mx-auto">
     <UForm :state="training" @submit="emit('submit')">
       <div class="space-y-6">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-4">
+            <UButton
+              to="/"
+              icon="i-heroicons-arrow-left"
+              variant="ghost"
+              color="neutral"
+              aria-label="Back to trainings"
+            />
+            <h2 class="text-2xl font-bold">
+              {{ title }}
+            </h2>
+          </div>
+          <UButton
+            :label="submitLabel"
+            icon="i-heroicons-check-circle"
+            color="primary"
+            size="lg"
+            type="submit"
+          />
+        </div>
         <UCard>
           <template #header>
             <div class="font-semibold">
