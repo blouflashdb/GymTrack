@@ -23,6 +23,10 @@ export default defineNuxtConfig({
     prerender: {
       routes: ['/'],
     },
+    alias: {
+      // Replace the Node.js native binding with the Wasm implementation
+      '@resvg/resvg-js': '@resvg/resvg-wasm',
+    },
   },
   typescript: {
     typeCheck: 'build',
