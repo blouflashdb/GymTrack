@@ -17,7 +17,7 @@ const items = [
   <UHeader>
     <template #title>
       <h1 class="text-3xl font-bold">
-        GymTrack
+        GymRatLog.app
       </h1>
     </template>
 

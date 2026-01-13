@@ -7,6 +7,14 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-charts',
   ],
+  app: {
+    head: {
+      title: 'GymRatLog.app',
+      meta: [
+        { name: 'description', content: 'Track your workouts and progress with GymRatLog.app' },
+      ],
+    },
+  },
   css: ['~/assets/css/main.css'],
   ui: {
     experimental: {
