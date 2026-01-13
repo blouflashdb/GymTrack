@@ -1,24 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/eslint',
-    '@nuxt/image',
-    '@nuxt/ui',
-    '@vueuse/nuxt',
-    'nuxt-charts',
-  ],
-  app: {
-    head: {
-      title: 'GymRatLog.app',
-      meta: [
-        { name: 'description', content: 'Track your workouts and progress with GymRatLog.app' },
-      ],
-      link: [
-        { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' },
-      ],
-    },
-  },
+  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui', '@vueuse/nuxt', 'nuxt-charts', '@nuxtjs/seo'],
   css: ['~/assets/css/main.css'],
+  site: {
+    url: 'https://gymratlog.app',
+    name: 'GymRat Log',
+    description: 'A simple training log app to track your workouts.',
+    defaultLocale: 'en',
+  },
   ui: {
     experimental: {
       componentDetection: true,
@@ -45,5 +34,8 @@ export default defineNuxtConfig({
         sortConfigKeys: true,
       },
     },
+  },
+  seo: {
+    redirectToCanonicalSiteUrl: true,
   },
 })
