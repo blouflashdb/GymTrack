@@ -41,9 +41,9 @@ function removeExercise(id: string) {
               color="neutral"
               aria-label="Back to trainings"
             />
-            <h2 class="text-2xl font-bold">
+            <h1 class="text-2xl font-bold">
               {{ title }}
-            </h2>
+            </h1>
           </div>
           <UButton
             :label="submitLabel"

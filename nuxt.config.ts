@@ -13,6 +13,9 @@ export default defineNuxtConfig({
       meta: [
         { name: 'description', content: 'Track your workouts and progress with GymRatLog.app' },
       ],
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' },
+      ],
     },
   },
   css: ['~/assets/css/main.css'],

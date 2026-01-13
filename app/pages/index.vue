@@ -13,7 +13,10 @@ const sortedTrainings = computed(() => {
   <div>
     <AppLoading v-if="!isMounted" />
     <div v-else class="space-y-4">
-      <div class="flex items-center justify-end">
+      <div class="flex items-center justify-between">
+        <h1 class="text-2xl font-bold">
+          Trainings
+        </h1>
         <UButton
           to="/trainings/new"
           icon="i-heroicons-plus"

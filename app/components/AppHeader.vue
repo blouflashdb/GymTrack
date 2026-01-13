@@ -16,9 +16,7 @@ const items = [
 <template>
   <UHeader>
     <template #title>
-      <h1 class="text-3xl font-bold">
-        GymRatLog.app
-      </h1>
+      <AppLogo />
     </template>
 
     <UNavigationMenu :items="items" />
