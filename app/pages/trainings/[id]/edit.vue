@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import type { Training } from '~/types'
 
+defineRouteRules({
+  robots: false,
+})
+
 const route = useRoute()
 const { getTraining, updateTraining } = useTrainings()
 

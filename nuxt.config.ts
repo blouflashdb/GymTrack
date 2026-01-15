@@ -5,8 +5,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://gymratlog.app',
     name: 'GymRat Log',
-    description: 'A simple training log app to track your workouts.',
-    defaultLocale: 'en',
+    description: 'Track your gym progress with GymRat Log - a free workout tracker and training log. Monitor exercise performance, visualize strength gains, and manage your fitness journey with detailed workout history and progress charts.',
   },
   ui: {
     experimental: {

@@ -2,6 +2,10 @@
 import type { Training } from '~/types'
 import { getLocalTimeZone, today } from '@internationalized/date'
 
+defineRouteRules({
+  robots: false,
+})
+
 const { addTraining } = useTrainings()
 
 const mounted = useMounted()

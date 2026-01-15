@@ -1,4 +1,9 @@
 <script setup lang="ts">
+useSeoMeta({
+  title: 'Your Trainings',
+  description: 'View and manage your workout history with GymRat Log. Access all your training sessions, track your gym progress, and easily start new workouts to maintain your fitness routine.',
+})
+
 const { trainings, trainingCount } = useTrainings()
 
 const isMounted = useMounted()
