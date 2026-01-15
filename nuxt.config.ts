@@ -1,3 +1,5 @@
+import { defineOrganization } from 'nuxt-schema-org/schema'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui', '@vueuse/nuxt', 'nuxt-charts', '@nuxtjs/seo'],
@@ -37,6 +39,12 @@ export default defineNuxtConfig({
         sortConfigKeys: true,
       },
     },
+  },
+  schemaOrg: {
+    identity: defineOrganization({
+      name: 'GymRat Log',
+      logo: '/apple-icon.png',
+    }),
   },
   seo: {
     redirectToCanonicalSiteUrl: true,
