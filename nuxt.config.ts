@@ -21,9 +21,6 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2025-07-15',
   nitro: {
-    prerender: {
-      routes: ['/'],
-    },
     alias: {
       // Replace the Node.js native binding with the Wasm implementation
       '@resvg/resvg-js': '@resvg/resvg-wasm',
@@ -40,6 +37,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  ogImage: {
+    zeroRuntime: true,
+  },
   schemaOrg: {
     identity: defineOrganization({
       name: 'GymRat Log',
@@ -48,5 +48,8 @@ export default defineNuxtConfig({
   },
   seo: {
     redirectToCanonicalSiteUrl: true,
+  },
+  sitemap: {
+    zeroRuntime: true,
   },
 })
