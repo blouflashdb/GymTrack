@@ -6,5 +6,10 @@ useSeoMeta({
 </script>
 
 <template>
-  <ExercisesLineChart />
+  <div class="space-y-6">
+    <h1 class="text-3xl font-bold">
+      Progress Chart
+    </h1>
+    <ExercisesLineChart />
+  </div>
 </template>
