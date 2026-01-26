@@ -8,8 +8,6 @@ defineRouteRules({
 
 const { addTraining } = useTrainings()
 
-const mounted = useMounted()
-
 const training = ref<Training>({
   date: today(getLocalTimeZone()).toString(),
   exercises: {},
@@ -22,14 +20,12 @@ async function saveTraining() {
 </script>
 
 <template>
-  <div>
+  <AppPageLoading>
     <TrainingForm
-      v-if="mounted"
       v-model="training"
       title="New Training"
       submit-label="Save Training"
       @submit="saveTraining"
     />
-    <AppLoading v-else />
-  </div>
+  </AppPageLoading>
 </template>

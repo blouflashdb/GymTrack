@@ -6,8 +6,6 @@ useSeoMeta({
 
 const { trainings, trainingCount } = useTrainings()
 
-const isMounted = useMounted()
-
 const sortedTrainings = computed(() => {
   return Object.entries(trainings.value)
     .sort(([, a], [, b]) => b.date.localeCompare(a.date))
@@ -15,9 +13,8 @@ const sortedTrainings = computed(() => {
 </script>
 
 <template>
-  <div>
-    <AppLoading v-if="!isMounted" />
-    <div v-else class="space-y-4">
+  <AppPageLoading>
+    <div class="space-y-4">
       <div class="flex items-center justify-between">
         <h1 class="text-2xl font-bold">
           Trainings
@@ -46,5 +43,5 @@ const sortedTrainings = computed(() => {
         />
       </div>
     </div>
-  </div>
+  </AppPageLoading>
 </template>

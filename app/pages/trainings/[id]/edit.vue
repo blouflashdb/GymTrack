@@ -24,7 +24,7 @@ async function save() {
 </script>
 
 <template>
-  <div>
+  <AppPageLoading>
     <TrainingForm
       v-if="training"
       v-model="training"
@@ -33,5 +33,5 @@ async function save() {
       @submit="save"
     />
     <AppLoading v-else />
-  </div>
+  </AppPageLoading>
 </template>

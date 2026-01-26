@@ -3,7 +3,6 @@ import { DateFormatter, getLocalTimeZone, parseDate, today } from '@internationa
 
 const { trainings, allExerciseNames } = useTrainings()
 
-const isMounted = useMounted()
 const selectedExercises = ref<string[]>([])
 const inputDate = useTemplateRef('inputDate')
 
@@ -150,9 +149,8 @@ function xFormatter(tick: number) {
 </script>
 
 <template>
-  <div>
-    <AppLoading v-if="!isMounted" />
-    <div v-else class="space-y-4">
+  <AppPageLoading>
+    <div class="space-y-4">
       <div class="flex flex-col sm:flex-row gap-4">
         <UFormField label="Exercises" class="flex-1">
           <USelectMenu v-model="selectedExercises" multiple :items="allExerciseNames" class="w-full" placeholder="Select exercises" />
@@ -196,5 +194,5 @@ function xFormatter(tick: number) {
         description="Please add trainings with exercises and select exercises to see the chart."
       />
     </div>
-  </div>
+  </AppPageLoading>
 </template>

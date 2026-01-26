@@ -10,6 +10,11 @@ const items = [
     icon: 'i-heroicons-chart-bar',
     to: '/chart',
   },
+  {
+    label: 'Settings',
+    icon: 'i-heroicons-cog-6-tooth',
+    to: '/settings',
+  },
 ]
 </script>
 
